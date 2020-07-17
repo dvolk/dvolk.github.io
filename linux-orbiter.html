@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Orbiter Space Flight Simulator on GNU/Linux HOW-TO</title>
+<!-- 2015-09-23 Wed 18:34 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Denis Volk" />
+<meta  name="description" content="A guide to getting Orbiter working on Linux"
+ />
+<meta  name="keywords" content="orbiter, space simulator, linux, gnu, tutorial, guide" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="mixed-tut.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Orbiter Space Flight Simulator on GNU/Linux HOW-TO</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction</a></li>
+<li><a href="#sec-2">2. Why Linux?</a></li>
+<li><a href="#sec-3">3. Requirements</a></li>
+<li><a href="#sec-4">4. Which Linux distribution?</a></li>
+<li><a href="#sec-5">5. Installing Linux</a></li>
+<li><a href="#sec-6">6. Linux 101</a></li>
+<li><a href="#sec-7">7. Installing and configuring WINE</a></li>
+<li><a href="#sec-8">8. Installing Orbiter</a></li>
+<li><a href="#sec-9">9. Running Orbiter</a></li>
+<li><a href="#sec-10">10. Refining the experience</a>
+<ul>
+<li><a href="#sec-10-1">10.1. More addons</a></li>
+<li><a href="#sec-10-2">10.2. autojump</a></li>
+<li><a href="#sec-10-3">10.3. reverse-i-search</a></li>
+<li><a href="#sec-10-4">10.4. Backing up</a></li>
+<li><a href="#sec-10-5">10.5. Different WINEPREFIX</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11. That's all!</a></li>
+</ul>
+</div>
+</div>
+<div id="corner-to-index">
+  <p id="index-text-p">
+    <a id="index-text-1" href="./index.html">Index</a> 
+    <a id="index-text-2" href="https://github.com/dvolk/site">Edit</a>
+    <a id="index-text-3" href="mailto:denis.volk@gmail.com">Contact</a>
+  </p>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<a href="wine-1353275265.png"><img src="wine-1353275265s.png"></a>
+<a href="wine-1353525077.png"><img src="wine-1353525077s.png"></a>
+<a href="wine-1353780989.png"><img src="wine-1353780989s.png"></a>
+
+<p>
+Orbiter (<a href="https://en.wikipedia.org/wiki/Orbiter_(simulator)">https://en.wikipedia.org/wiki/Orbiter_(simulator)</a>) runs
+surprisingly well on GNU/Linux (from now on: Linux). Since the
+developer doesn't appear to be particularly interested in making
+Orbiter cross-platform, it is necessary to use the Wine compatibility
+layer (<a href="http://www.winehq.org/">http://www.winehq.org/</a>). This guide assumes that you have not
+used Linux before, but are interested in doing so for the purpose of,
+among other things, running Orbiter on it. It is probably impossible
+for this guide to be "complete" for everyone - it all depends on how
+comfortable you are with computers. If you're having trouble with some
+step, you're encouraged to use Google, ask in the Linux4Noobs subreddit
+(<a href="http://www.reddit.com/r/linux4noobs">http://www.reddit.com/r/linux4noobs</a>), or email me. 
+</p>
+
+<p>
+Written on 2012-11-24. Updated 2014-04-15.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Why Linux?</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Linux&#x2026;
+</p>
+
+<ul class="org-ul">
+<li>&#x2026;is free, as in gratis
+</li>
+<li>&#x2026;is free, as in the GPL licence allows you to do with it as you please (<a href="https://www.fsf.org/about/what-is-free-software">https://www.fsf.org/about/what-is-free-software</a>)
+</li>
+<li>&#x2026;is open source
+</li>
+<li>&#x2026;isn't controlled by one person or corporation
+</li>
+<li>&#x2026;has software repositories that allow you to install software easily and securely
+</li>
+<li>&#x2026;has a large and friendly community, which you can be part of, or not
+</li>
+</ul>
+
+<p>
+The same can be said for most software that runs on Linux 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Requirements</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>a PC that can smoothy run Orbiter with d3d9client on Windows
+</li>
+<li>an empty partition or unpartitioned space to install Linux on
+</li>
+<li>patience. Rome wasn't built in a day
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Which Linux distribution?</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+To run Orbiter on Linux you will need to install Linux. Linux comes in
+"distributions", which are customized collections of Linux software.
+You can typically do anything on any distribution, but some tasks may
+be easier on some distributions than others.
+</p>
+
+<p>
+I recommend Ubuntu, either
+</p>
+
+<ul class="org-ul">
+<li>Ubuntu (<a href="http://www.ubuntu.com/">http://www.ubuntu.com/</a>), installs a "modern" "touch-pad compatible" desktop with lots of bells and whistles
+</li>
+<li>Xubuntu (<a href="http://xubuntu.org/">http://xubuntu.org/</a>), installs a traditional desktop with menus and icons. Lighter on resources too
+</li>
+</ul>
+
+<p>
+Personally, I prefer Xubuntu.
+</p>
+
+<p>
+Whichever desktop you choose, you can install the other one (and many
+more) later easily and switch between them, so it doesn't matter which
+you start with. 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Installing Linux</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+This is somewhat beyond the scope of this document, but the general
+procedure is
+</p>
+
+<ul class="org-ul">
+<li>download a Linux .iso image from the sites above
+</li>
+<li>burn the image onto a CD/DVD (which is not the same as "copying" the
+</li>
+</ul>
+<p>
+.iso file onto the CD/DVD)
+</p>
+<ul class="org-ul">
+<li>Back-up all important data just in case!
+</li>
+<li>Set your BIOS to boot from CD-rom/DVD-rom first
+</li>
+<li>Insert the CD/DVD and (re)boot your PC
+</li>
+<li>Follow the on-screen instructions
+</li>
+</ul>
+
+<p>
+For security and privacy I recommend encrypting your partitions by
+telling the installer to set up "encrypted LVM"
+</p>
+
+<p>
+If you have a newer PC with UEFI instead(?) of a BIOS, the process
+should be similar. 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Linux 101</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Navigating the graphical UIs in Linux should be intuitive enough, but
+we'll be needing a terminal.
+</p>
+
+<p>
+Find a terminal (there are many) in the applications menu of your
+desktop and run it. It will open a window with <code>username@computername:~$</code>
+in it. This is called a prompt. You type in commands and read their
+output (if any). It might seem archaic but it's very powerful. 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Installing and configuring WINE</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Ubuntu's software repository has the stable branch of Wine, but we'll
+be installing the latest beta.
+</p>
+
+<p>
+Open a terminal and run the following commands (one by one):
+</p>
+
+<pre class="example">
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine1.7
+</pre>
+
+<p>
+You now have Wine. Great.
+</p>
+
+<p>
+Next run
+</p>
+
+<pre class="example">
+winecfg
+</pre>
+
+<p>
+This will initialize Wine and open a configuration window. Set the
+Windows version to Windows XP. Enable "Emulate a virtual desktop" and
+set the resolution to something smaller than your screen resolution.
+Check that you have sound working by clicking Test Sound. Press OK to
+save and exit.
+</p>
+
+<p>
+Next run
+</p>
+
+<pre class="example">
+winetricks d3dx10 d3dx9_36 vcrun2005 corefonts
+</pre>
+
+<p>
+This will download DirectX and msvc redistributables that you need to
+run Orbiter (If only Windows was this convenient!) 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Installing Orbiter</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Download orbiter100830.zip from
+<a href="http://www.orbiter-forum.com/download.php">http://www.orbiter-forum.com/download.php</a> and D3D9ClientR7.zip from
+<a href="https://d3d9client.codeplex.com/">https://d3d9client.codeplex.com/</a>
+</p>
+
+<p>
+Open a terminal and run
+</p>
+
+<pre class="example">
+mkdir ~/.wine/drive_c/orbiter
+cd ~/.wine/drive_c/orbiter
+cp ~/Downloads/*.zip ~/.wine/drive_c/orbiter
+sudo apt-get install unzip
+unzip orbiter100830.zip
+unzip D3D9ClientR7.zip
+</pre>
+
+<p>
+That's it.
+</p>
+
+<p>
+Some explanation is in order so you know what's going on. <code>~</code> is a short
+way of refering to your user directory, which will be <code>/home/username</code>.
+Wine creates the <code>.wine</code> directory in your user directory to store
+everything in. The dot <code>.</code> in <code>.wine</code> means it's a hidden directory, so it
+won't be visible in your file manager unless you ask it to display
+hidden files (they're hidden to avoid clutter). The Wine <code>C:\</code> drive is
+stored completely in <code>~/.wine/drive_c/</code>, so when you access <code>C:\</code> in an
+application running in Wine, that's where the files actually are.
+</p>
+
+<p>
+The first command creates the directory <code>~/.wine/drive_c/orbiter</code>. The
+second changes the current active directory to that directory. The
+third copies any zips in <code>~/Downloads</code>, where firefox saves files, to the
+orbiter directory. The fourth installs unzip. The fifth and sixth unzip
+the orbiter and <code>d3d9client</code> zips.
+</p>
+
+<p>
+To find out more what Linux commands do, use man, e.g.
+</p>
+
+<pre class="example">
+man mkdir
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Running Orbiter</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Open a terminal and run
+</p>
+
+<pre class="example">
+cd ~/.wine/drive_c/orbiter
+wine Orbiter_ng.exe
+</pre>
+
+<p>
+click Modules, and click Expand all twice. Enable the D3D9Client
+checkbox.
+</p>
+
+<p>
+click Video, and switch to full screen
+</p>
+
+<p>
+click Parameters, uncheck Focus follows mouse
+</p>
+
+<p>
+click Scenario and pick something. Anything.
+</p>
+
+<p>
+click Launch Orbiter
+</p>
+
+<p>
+play!
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Refining the experience</h2>
+<div class="outline-text-2" id="text-10">
+</div><div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> More addons</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+Installing Orbiter addons should be fairly easy. Simply move the zip
+files to <code>~/.wine/drive_c/orbiter</code> and unzip them. Some MFD addons don't
+seem to work in Wine, for example BurnTimeMFD. Oh well!
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> autojump</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+Since typing <code>~/.wine/drive_c/orbiter</code> can get tedious, I recommend
+installing autojump (<code>apt-get install autojump</code>). Then run <code>j
+~/.wine/drive_c/orbiter</code>. From now on, you can cd into this directory by
+simply running <code>j orb</code>. This is a fantastic tool for navigating directory
+trees!
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-3" class="outline-3">
+<h3 id="sec-10-3"><span class="section-number-3">10.3</span> reverse-i-search</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+Another way to save time typing is to press Ctrl-R and then type a few
+letters of the command you want to run (that you've already run
+before). Ctrl-R will search through your history and recommend the
+closest it finds. Then simply press Enter to run it. For example, if
+you last ran <code>wine Orbiter_ng.exe</code>, then Ctrl-R and typing will should
+recommend that command.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> Backing up</h3>
+<div class="outline-text-3" id="text-10-4">
+<p>
+The entire Wine "Windows installation" is stored in <code>~/.wine</code>. This makes
+it very easy to move between computers. Simply copy the entire
+directory!
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-5" class="outline-3">
+<h3 id="sec-10-5"><span class="section-number-3">10.5</span> Different WINEPREFIX</h3>
+<div class="outline-text-3" id="text-10-5">
+<p>
+It is possible to install Wine elsewhere than <code>~/.wine</code> by setting
+<code>WINEPREFIX</code>, e.g.
+</p>
+
+<pre class="example">
+WINEPREFIX=/home/yourusername/wine-orbiter winecfg
+</pre>
+
+<p>
+will setup wine in <code>~/wine-orbiter</code> instead of <code>~/.wine</code>. This allows you
+to have seperate instances of "Windows" for every game, with different
+settings.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> That's all!</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+If you have any questions or suggestions email me!
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Denis Volk</p>
+<p class="date">Created: 2015-09-23 Wed 18:34</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

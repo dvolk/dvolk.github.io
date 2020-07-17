@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>bloggen.py source and instructions - dvolk.github.io</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="bloggen.py see https://github.com/dvolk/bloggen" />
+<meta name="author" content="Denis Volk" />
+<meta name="viewport" content="width=device-width" />
+<meta name="description" content="I've cleaned up the blog generator source a bit and uploaded it to github." />
+<link rel="icon" href="../favicon.png" type="image/png" />
+<link rel="stylesheet" type="text/css" href="../index.css" />
+<link rel="alternate" type="application/rss+xml" href="../feed.rss" title="RSS feed for dvolk.github.io">
+</head>
+<body>
+<div class='outer'>
+<div class='inner'>
+<div class='header'>
+<div class='logo'>
+<h1><a style='color: black;' href='..'>dvolk.github.io</a></h1>
+</div>
+<div class='navigation'><p><span style='font-size: 1.2em; visibility: hidden'>.</span>
+<a style='background-color: #CAFF70' class='top-link' href='./about_me.html'>About</a> 
+<a id='rss' href='../feed.rss'>RSS</a></p>
+</div>
+</div>
+<div class="entry">
+<h2 style='display: inline'><a href='./bloggen-source-and-instructions.html'>bloggen.py source and instructions</a></h2>
+<br/><p style='font-size: 0.8em; display: inline'> <b>2015-09-17</b> by <b>dvolk</b></p>
+<div class="summary">
+<p>I've cleaned up the blog generator source a bit and uploaded it to github.</p>
+</div><div class="rest">
+<p><a href="https://github.com/dvolk/bloggen">Github repo.</a></p>
+<p>bloggen.py is configured by editing bloggen.py 😸.</p>
+<p>Posts come from ./content/posts/*.</p>
+<p>The generated site is in ./generated/*.</p>
+<p>Posts are formatted using HTML (initially I used markdown, but I think HTML is more convenient).</p>
+<p>For example:</p>
+<pre style="color: #cccccc; background-color: #103050; font-weight: bold;"><span style="background-color: #103050;">&lt;</span><span style="color: #daa520; background-color: #103050;">span</span><span style="background-color: #103050;"> </span><span style="color: #4eee94; background-color: #103050;">class</span><span style="background-color: #103050;">=</span><span style="color: #deb887; background-color: #103050;">"title"</span><span style="background-color: #103050;">&gt;title here&lt;/</span><span style="color: #daa520; background-color: #103050;">span</span><span style="background-color: #103050;">&gt;
+&lt;</span><span style="color: #daa520; background-color: #103050;">span</span><span style="background-color: #103050;"> </span><span style="color: #4eee94; background-color: #103050;">class</span><span style="background-color: #103050;">=</span><span style="color: #deb887; background-color: #103050;">"time"</span><span style="background-color: #103050;">&gt;17/9/3000 16:00&lt;/</span><span style="color: #daa520; background-color: #103050;">span</span><span style="background-color: #103050;">&gt;
+&lt;</span><span style="color: #daa520; background-color: #103050;">span</span><span style="background-color: #103050;"> </span><span style="color: #4eee94; background-color: #103050;">class</span><span style="background-color: #103050;">=</span><span style="color: #deb887; background-color: #103050;">"author"</span><span style="background-color: #103050;">&gt;you!&lt;/</span><span style="color: #daa520; background-color: #103050;">span</span><span style="background-color: #103050;">&gt;
+&lt;</span><span style="color: #daa520; background-color: #103050;">div</span><span style="background-color: #103050;"> </span><span style="color: #4eee94; background-color: #103050;">class</span><span style="background-color: #103050;">=</span><span style="color: #deb887; background-color: #103050;">"summary"</span><span style="background-color: #103050;">&gt;
+  &lt;</span><span style="color: #daa520; background-color: #103050;">p</span><span style="background-color: #103050;">&gt;This is the summary that apperas both on the
+    index and the post page.&lt;/</span><span style="color: #daa520; background-color: #103050;">p</span><span style="background-color: #103050;">&gt;
+&lt;/</span><span style="color: #daa520; background-color: #103050;">div</span><span style="background-color: #103050;">&gt;
+&lt;</span><span style="color: #daa520; background-color: #103050;">div</span><span style="background-color: #103050;"> </span><span style="color: #4eee94; background-color: #103050;">class</span><span style="background-color: #103050;">=</span><span style="color: #deb887; background-color: #103050;">"rest"</span><span style="background-color: #103050;">&gt;
+  &lt;</span><span style="color: #daa520; background-color: #103050;">p</span><span style="background-color: #103050;">&gt;This is the rest of the post. It only appears
+    on the post page&lt;/</span><span style="color: #daa520; background-color: #103050;">p</span><span style="background-color: #103050;">&gt;
+&lt;/</span><span style="color: #daa520; background-color: #103050;">div</span><span style="background-color: #103050;">&gt;
+</span></pre>
+<p>There are 3 special spans, "title", "time" and "author" and two special divs "summary" and "rest". The time must be in a dd/mm/yyyy hh:mm format by default. The content of the "summary" div is displayed both on the index and the seperate post page. The content of the "rest" div is only displayed on the post page.</p>
+<p>None of these elements are required. A minimum post is just an empty file. Anything outside the elements is ignored.</p>
+<p>That's about it!</p>
+</div></div>
+</div>
+</div>
+</body>
+</html>

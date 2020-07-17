@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Running with Ubuntu GNU/Linux</title>
+<!-- 2014-05-01 Thu 15:48 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Denis Volk" />
+<meta  name="description" content="A guide to installing a custom, minimal(ish) GNU/Linux system"
+ />
+<meta  name="keywords" content="Ubuntu, Linux, server, minimal, grsecurity" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="mixed-tut.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Running with Ubuntu GNU/Linux</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction</a></li>
+<li><a href="#sec-2">2. Install</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Picking the right installer</a></li>
+<li><a href="#sec-2-2">2.2. Before Proceeding</a></li>
+<li><a href="#sec-2-3">2.3. Boot options</a></li>
+<li><a href="#sec-2-4">2.4. Some installation options</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Post-install</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Using tmux</a></li>
+<li><a href="#sec-3-2">3.2. Firewall</a></li>
+<li><a href="#sec-3-3">3.3. Setting apt defaults</a></li>
+<li><a href="#sec-3-4">3.4. Updating</a></li>
+<li><a href="#sec-3-5">3.5. World un-readable</a></li>
+<li><a href="#sec-3-6">3.6. Tracking /etc</a></li>
+<li><a href="#sec-3-7">3.7. X.Org</a></li>
+<li><a href="#sec-3-8">3.8. ranger &amp; ncdu</a></li>
+<li><a href="#sec-3-9">3.9. Firefox</a></li>
+<li><a href="#sec-3-10">3.10. AppArmor</a></li>
+<li><a href="#sec-3-11">3.11. More Firefox</a></li>
+<li><a href="#sec-3-12">3.12. Youtube sans flash</a></li>
+<li><a href="#sec-3-13">3.13. GTK2 appearance</a></li>
+<li><a href="#sec-3-14">3.14. apt-file</a></li>
+<li><a href="#sec-3-15">3.15. Other software</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. grsecurity</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Why and how</a></li>
+<li><a href="#sec-4-2">4.2. Building the Linux kernel</a></li>
+<li><a href="#sec-4-3">4.3. It doesn't work</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="corner-to-index">
+  <p id="index-text-p">
+    <a id="index-text-1" href="./index.html">Index</a> 
+    <a id="index-text-2" href="https://github.com/dvolk/site">Edit</a>
+    <a id="index-text-3" href="mailto:denis.volk@gmail.com">Contact</a>
+  </p>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Ubuntu is often believed to be bloated and slow, and users are recommended 
+to install other distributions like Arch Linux if they want to have a 'lean' system. 
+This belief is mistaken. Ubuntu can provide a very good mix of leanness and convenience. 
+</p>
+
+<p>
+This page is a beginner's guide on how to install and setup such a system. It's
+based on my own preferences and notes.
+</p>
+
+<p>
+I used 14.4 for testing to write this, but everything should
+work with versions 12.4 and later. If it changes then I will
+update it.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Install</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Picking the right installer</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Ubuntu media come in two forms: desktop and server. The desktop installer doesn't 
+offer many options. We'll be getting the server image from:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.ubuntu.com/download/server">http://www.ubuntu.com/download/server</a>
+</li>
+</ul>
+
+<p>
+I recommend getting the latest release. The system can be upgraded to a new release
+fairly easily.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Before Proceeding</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+As always, backup important data and find some room for a new install. If you have
+any kind of special setup not covered here (such as UEFI or PPPoE), you should
+either read about it carefully before installation or have another Internet-capable 
+device nearby.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Boot options</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Once you've booted the install media, you will have access to additional options 
+through the function keys F1-F6. 
+</p>
+
+<p>
+Some to consider are:
+</p>
+
+<ul class="org-ul">
+<li><b>Expert mode</b> Enabling this gives more options in the installer. You shouldn't need most of the options, but one that's interesting is that you can choose to have a separate /home partition, or separate /home, /usr, /var, and /tmp partitions. Having separate partitions can sometimes be useful. On the other hand, it's annoying if you run out of space on one of them.
+</li>
+
+<li><b>Install a minimal system</b> Enabling this will install a slightly smaller system (1.1G normally, 1G with 'minimal')
+</li>
+
+<li><b>Free software only</b> If you enable this, the installer won't add the multiverse and restricted software repositories. 
+</li>
+</ul>
+
+<p>
+Select 'Install Ubuntu Server' and press enter to boot into the installer
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Some installation options</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+The installer will ask you some simple questions. 
+</p>
+
+<p>
+After setting up a user, it will ask you if you want to encrypt the user(s) home 
+directories. The method used seems rather inconvenient. I recommend saying <b>no</b> here.
+</p>
+
+<p>
+When partitioning disks, the installer will ask you what partitioning method to use. 
+I strongly recommend picking <b>encrypted LVM</b>. This will encrypt all partitions
+except /boot.
+</p>
+
+<p>
+The weakest part of the encryption will be your passphrase. 
+Read carefully and pick a good one.
+</p>
+
+<p>
+The installer will ask you if you want automatic security updates. This is a 
+good idea and it's easy to toggle it later if you change your mind.
+</p>
+
+<p>
+Next is the software selection. Leave everything unchecked unless you actually
+want it.
+</p>
+
+<p>
+The system will install and then reboot.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Post-install</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Using tmux</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Login as the user you created. Tmux is very useful for managing terminals. 
+It's already installed, all you need to do is, well&#x2026; run 'tmux' 
+</p>
+
+<p>
+If you've never used it before, Control-b ? (usually written as: C-b ?) will 
+bring up the keybindings.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Firewall</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+It's not a bad idea to immediately enable the firewall:
+</p>
+
+<pre class="example">
+sudo ufw enable
+sudo ufw default deny outgoing
+sudo ufw allow out 80/tcp
+sudo ufw allow out 443/tcp
+sudo ufw allow out to &lt;DNS SERVER IP HERE&gt; port 53
+</pre>
+
+<p>
+This will drop all incoming connections, and all outgoing connections except HTTP and HTTPS.
+You should add rules here only as required. 
+</p>
+
+<p>
+If your dns server was set automatically through DHCP or PPPoE, you can 
+find it with
+</p>
+
+<pre class="example">
+cat /etc/resolv.conf
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Setting apt defaults</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+open /etc/apt/apt.conf for editing
+</p>
+
+<pre class="example">
+sudo apt-get install zile
+sudo zile /etc/apt/apt.conf
+</pre>
+
+<p>
+and add
+</p>
+
+<pre class="example">
+APT::Install-Recommends "0";
+APT::Install-Suggests "0";
+</pre>
+
+<p>
+This will make apt-get <span class="underline">not</span> consider recommended and suggested packages as dependencies.
+It will still print what it recommends installing every time you install a package through apt-get, so
+you'll need to consider what you actually need.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Updating</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+The packages that came on the install media are probably outdated. It's important
+to update to the latest
+</p>
+
+<pre class="example">
+sudo apt-get update
+sudo apt-get dist-upgrade
+</pre>
+
+<p>
+It's not a bad idea to reboot after this.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> World un-readable</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+By default, anyone can read files that users create. This is for compatibility with services 
+like HTTP servers, but if you're not using those it's possible to slightly increase security
+by making your files accessible to you.
+</p>
+
+<p>
+First we need make sure only you have access to your home directory
+</p>
+
+<pre class="example">
+chmod -R go-rwx ~
+</pre>
+
+<p>
+Then open ~/.bashrc and put 
+</p>
+
+<pre class="example">
+umask 077
+</pre>
+
+<p>
+at the end. This makes it so newly created files can't be accessed by other users.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> Tracking /etc</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+It's a good idea to keep track of what happens in /etc. etckeeper is a wrapper
+around version control systems that does this
+</p>
+
+<pre class="example">
+sudo apt-get install etckeeper git
+</pre>
+
+<p>
+etckeeper assumes you're using the bazaar VCS, but I chose git because it's 
+what I know best. We need to uncomment git by removing the #
+</p>
+
+<pre class="example">
+VCS="git"
+</pre>
+
+<p>
+in /etc/etckeeper/etckeeper.conf
+</p>
+
+<p>
+and also comment out the other one with
+</p>
+
+<pre class="example">
+#VCS="bzr"
+</pre>
+
+<p>
+Had you installed bzr, it would have initialized etckeeper automatically, but
+on other VCS you have to do it yourself
+</p>
+
+<pre class="example">
+sudo etckeeper init
+</pre>
+
+<p>
+etckeeper will auto-add and commit everything in /etc every time you add or remove packages
+through apt-get. Let's try it out by installing a fancy git tool!
+</p>
+
+<pre class="example">
+sudo apt-get install tig
+</pre>
+
+<p>
+now you can run
+</p>
+
+<pre class="example">
+cd etc; sudo tig
+</pre>
+
+<p>
+to browse changes in /etc
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> X.Org</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+It's time to install X.Org
+</p>
+
+<pre class="example">
+sudo apt-get install xserver-xorg xinit i3 rxvt-unicode
+</pre>
+
+<p>
+open ~/.xinitrc and add
+</p>
+
+<pre class="example">
+exec i3
+</pre>
+
+<p>
+Now start it:
+</p>
+
+<pre class="example">
+xinit -- -nolisten tcp
+</pre>
+
+<p>
+Setting up X was painful for a long time. Every time I do this and it just works I 
+feel like I'm living in the future.
+</p>
+
+<p>
+This should start up X.Org with the i3 window manager. After you accept the default settings 
+you should have blank screen.
+</p>
+
+<p>
+Press WinKey-Enter twice (usually written as: M-return, M for meta) to open two terminals. 
+Then press M-S-down (S = shift) arrow to rearrange the terminal layout
+</p>
+
+<p>
+If you haven't used i3 before, read the man page for more keybindings and then experiment. 
+It's a very useful window manager.
+</p>
+
+<p>
+The statusbar just displays which workspace we're on which isn't very useful and wastes space. 
+Let's comment it out in at the end of ~/.i3/config:
+</p>
+
+<pre class="example">
+#bar {
+#        status_command i3status
+#}
+</pre>
+
+<p>
+Since we're there let's also add another keybinding:
+</p>
+
+<pre class="example">
+bindsym $mod+b border toggle
+</pre>
+
+<p>
+Now if you reload i3 by pressing M-S-r the statusbar should disappear. 
+</p>
+
+<p>
+Pressing M-b will toggle the decorations for the focused window, which is useful for saving screen space.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-8" class="outline-3">
+<h3 id="sec-3-8"><span class="section-number-3">3.8</span> ranger &amp; ncdu</h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+While using bash and coreutils is fine, at some point you'll probably want a more
+specialized interface for managing files. Once such interface is ranger:
+</p>
+
+<p>
+ncdu is a ncurses interface to du - disk usage utility. It makes it very easy
+to see what's eating up disk space.
+</p>
+
+<pre class="example">
+sudo apt-get install ranger ncdu
+</pre>
+
+<p>
+Press ? to load the man page.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-9" class="outline-3">
+<h3 id="sec-3-9"><span class="section-number-3">3.9</span> Firefox</h3>
+<div class="outline-text-3" id="text-3-9">
+<p>
+Let's install Firefox
+</p>
+
+<pre class="example">
+sudo apt-get install firefox
+</pre>
+
+<p>
+The firefox package comes with an AppArmor profile, so let's take care of that before starting firefox
+for the first time
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-10" class="outline-3">
+<h3 id="sec-3-10"><span class="section-number-3">3.10</span> AppArmor</h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+Normally, an application running with a user id is able to do anything the user can do.
+AppArmor is a Linux kernel module that additionally restricts programs. An AppArmor profile
+for a program lists all files and capabilities that the program is allowed to use. Anything
+not on the list is denied and logged. For example, it's possible to restrict a PDF reader
+to only be able to read files with the .pdf extension, and deny write and network access
+altogether (for some reason this is an exercise left to the reader however). 
+AppArmor implements so-called Mandatory Access Controls. It's not the most
+sophisticated MAC framework, but it is probably the most convenient to use.
+</p>
+
+<p>
+Ubuntu comes with AppArmor enabled, all we need to do is install extra profiles and
+turn the profiles to enforcing mode.
+</p>
+
+<pre class="example">
+sudo apt-get install apparmor-profiles apparmor-utils
+cd /etc/apparmor.d/
+sudo find . -maxdepth 1 -type f -exec aa-enforce '{}' \;
+</pre>
+
+<p>
+You can check that the profiles are enforced by running
+</p>
+
+<pre class="example">
+aa-status
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-11" class="outline-3">
+<h3 id="sec-3-11"><span class="section-number-3">3.11</span> More Firefox</h3>
+<div class="outline-text-3" id="text-3-11">
+<p>
+Now that we've enabled the AA profile for firefox, it's time to start and configure it
+</p>
+
+<p>
+Press M-2 to switch to the second workspace, press M-d to bring up dmenu, type in firefox and press
+enter to run it.
+</p>
+
+<p>
+Open the preferences and press M-w to switch to a tabbed layout.
+</p>
+
+<p>
+Type in about:blank as your home page.
+</p>
+
+<p>
+We can take some simple precautions to help avoid being tracked by corporations and agencies 
+on the web:
+</p>
+
+<p>
+On the privacy tab, select 'custom settings for history', then set 'accept third-party 
+cookies' to never and 'keep until' to 'I close firefox'. Check 'clear history when 
+firefox closes', click settings and check all the options except 'saved passwords'. 
+Uncheck the two 'Remember&#x2026;' options above.
+</p>
+
+<p>
+Since we're here. Go to advanced - data choices and uncheck the health and crash reporters.
+</p>
+
+<p>
+One of the best things about firefox is how many addons there are for it. Here are some I
+recommend
+</p>
+
+<ul class="org-ul">
+<li>Tree Style Tabs <a href="https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/">https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/</a>
+</li>
+<li>Noscript <a href="https://addons.mozilla.org/en-US/firefox/addon/noscript/">https://addons.mozilla.org/en-US/firefox/addon/noscript/</a>
+</li>
+<li>Adblock Plus <a href="https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/">https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/</a>
+</li>
+<li>Requestpolicy <a href="https://addons.mozilla.org/en-US/firefox/addon/requestpolicy/">https://addons.mozilla.org/en-US/firefox/addon/requestpolicy/</a>
+</li>
+<li>Refcontrol <a href="https://addons.mozilla.org/en-US/firefox/addon/refcontrol/">https://addons.mozilla.org/en-US/firefox/addon/refcontrol/</a>
+</li>
+<li>HTTPS everywhere <a href="https://www.eff.org/https-everywhere">https://www.eff.org/https-everywhere</a>
+</li>
+</ul>
+
+<p>
+These are only the most basic tweaks. Firefox is a beast.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-12" class="outline-3">
+<h3 id="sec-3-12"><span class="section-number-3">3.12</span> Youtube sans flash</h3>
+<div class="outline-text-3" id="text-3-12">
+<p>
+Youtube is entertaining and sometimes even useful. Browser plugins on the other hand
+are a terrible idea and HTML5 doesn't always work. Fortunately there's a way around these
+problems
+</p>
+
+<pre class="example">
+sudo apt-get install mplayer youtube-dl
+</pre>
+
+<p>
+We can now download and play videos:
+</p>
+
+<pre class="example">
+youtube-dl -f 18 http://www.youtube.com/watch?v=UdfY25gDjK8
+mplayer Richard\ Stallman\ signs\ my\ laptop\ and\ removes\ Windows\ 8\ license-UdfY25gDjK8.mp4
+</pre>
+
+<p>
+It used to be possible to play videos directly without saving them by using 
+youtube-dl -g, but google now returns HTTPS URLs and mplayer only understands HTTP.
+</p>
+
+<p>
+Despite the name, youtube-dl supports quite a few video sites.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-13" class="outline-3">
+<h3 id="sec-3-13"><span class="section-number-3">3.13</span> GTK2 appearance</h3>
+<div class="outline-text-3" id="text-3-13">
+<p>
+The default look of GTK is not the best. The easiest way to change it is to install and run
+lxappearance. 
+</p>
+
+<pre class="example">
+sudo apt-get install lxappearance gtk2-engines
+lxappearnace
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-14" class="outline-3">
+<h3 id="sec-3-14"><span class="section-number-3">3.14</span> apt-file</h3>
+<div class="outline-text-3" id="text-3-14">
+<p>
+It's often useful to know which package a file came from. apt-file is a tool for searching files in packages.
+</p>
+
+<pre class="example">
+sudo apt-get install apt-file
+sudo apt-file update
+</pre>
+
+<p>
+As a test we can look for packages that come with AppArmor profiles:
+</p>
+
+<pre class="example">
+apt-file search '/etc/apparmor.d'
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3-15" class="outline-3">
+<h3 id="sec-3-15"><span class="section-number-3">3.15</span> Other software</h3>
+<div class="outline-text-3" id="text-3-15">
+<p>
+Some recommendations
+</p>
+
+<ul class="org-ul">
+<li><b>lyx</b> a WYSIWYG editor that exports to LaTeX (and so PDF, DVI). For writing everything from letters to books. Especially useful for anything science-y
+</li>
+<li><b>emacs</b> an editor that's also a web browser, video editor, spreadsheet, IRC and mail client,&#x2026;
+</li>
+<li><b>gimp</b> raster graphics editor
+</li>
+<li><b>audacity</b> audio editor
+</li>
+<li><b>ffmpeg</b> very capable command-line video/audio editor
+</li>
+<li><b>irssi</b> IRC client
+</li>
+<li><b>zathura</b> PDF viewer
+</li>
+<li><b>djview4</b> DJVU viewer
+</li>
+<li><b>mutt</b> IMAP/SMTP email client
+</li>
+<li><b>feh</b> miniaml image viewer
+</li>
+<li><b>rtorrent</b> minimal torrent client
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> grsecurity</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Why and how</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+grsecurity is a patch for the linux kernel that provides many additional security features including
+its own MAC framework. It is not part of the kernel (at the moment) so it has to be installed manually.
+</p>
+
+<p>
+Is it necessary? Good question. But building a kernel is fun and you should do it at least once.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Building the Linux kernel</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+We'll need some tools
+</p>
+
+<pre class="example">
+sudo apt-get install build-essential libncurses5-dev gcc-4.8-plugin-dev
+mkdir ~/src
+cd ~/src
+</pre>
+
+<p>
+go to
+</p>
+
+<p>
+<a href="https://www.kernel.org/">https://www.kernel.org/</a>
+</p>
+
+<p>
+and download the latest kernel source. Grab the matching grsecurity patch and gradm from
+</p>
+
+<p>
+<a href="https://grsecurity.net/download.php">https://grsecurity.net/download.php</a>
+</p>
+
+<p>
+Download the key and signatures, and let's verify the downloads:
+</p>
+
+<pre class="example">
+gpg --import spender-gpg-key.asc
+gpg --verify grsecurity*.patch.sig grsecurity*.patch
+gpg --verify gradm*.tar.gz.sig gradm*.tar.gz
+</pre>
+
+<p>
+and the Linux kernel source too (keyservers live on port 11371):
+</p>
+
+<pre class="example">
+sudo ufw allow out 11371/tcp
+gpg --recv-keys 6092693E
+xz -cd linux-*.tar.xz | gpg --verify linux-*.tar.sign -
+</pre>
+
+<p>
+gpg will complain that the keys aren't trusted. But that is a tricky affair.
+</p>
+
+<pre class="example">
+tar xf linux*.tar.gz
+cd linux*
+patch -p1 &lt; ../grsecurity*.patch
+make menuconfig
+</pre>
+
+<p>
+At this point you will get menu system with many options and you should look over them carefully.
+Since we've patched with grsecurity, you should enable it in Security Options, or it's all for naught.
+Prominent options you may want to disable are various hotplugging features and IA32 emulation.
+</p>
+
+<p>
+Once you're done, it's time to build the kernel
+</p>
+
+<pre class="example">
+make deb-pkg
+</pre>
+
+<p>
+If you have more than one core, you can parallelize the build process with -jN, e.g.:
+</p>
+
+<pre class="example">
+make -j8 deb-pkg
+</pre>
+
+<p>
+Once it's done, you'll have fresh kernel packages. Install them with 
+</p>
+
+<pre class="example">
+dpkg -i *.deb
+</pre>
+
+<p>
+Reboot and select the new kernel on the boot loader.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> It doesn't work</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Your system didn't boot, or perhaps the keyboard isn't responding, or your sound card isn't detected.
+That's OK. It might take a couple of iterations to get everything working the first time. Try again.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Denis Volk</p>
+<p class="date">Created: 2014-05-01 Thu 15:48</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

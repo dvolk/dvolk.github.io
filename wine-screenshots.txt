@@ -1,0 +1,29 @@
+HOWTO: take screenshots of (windowed) wine games
+
+1. Install imagemagick
+
+# apt-get install imagemagick (or equivalent)
+
+2. Create a directory to hold the screenshots
+
+$ mkdir ~/wine-scr
+
+3. Open a text editor and write
+
+#!/bin/bash
+
+/usr/bin/import -window "Default - Wine Desktop" ~/wine-scr/wine-$(date +%s).png
+
+3.5 You may have to edit the wine (^^^) window title if yours is different
+
+4. Save the file as ~/wine-scr/take-scr.sh
+
+5. Mark it executable
+
+$ chmod u+x ~/wine-scr/take-scr.sh
+
+6. Edit your window manager preferences to bind a key (I use caps lock) to run ~/wine-scr/take-scr.sh
+
+6.5 Note: your window manager probably won't parse ~ properly. Replace ~ with the explicit path, i.e. /home/yourusername
+
+7. Run wine and take a screenshot to test it!

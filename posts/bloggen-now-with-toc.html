@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bloggen.py now with table of contents - dvolk.github.io</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="bloggen.py see https://github.com/dvolk/bloggen" />
+<meta name="author" content="Denis Volk" />
+<meta name="viewport" content="width=device-width" />
+<meta name="description" content="Yes indeed." />
+<link rel="icon" href="../favicon.png" type="image/png" />
+<link rel="stylesheet" type="text/css" href="../index.css" />
+<link rel="alternate" type="application/rss+xml" href="../feed.rss" title="RSS feed for dvolk.github.io">
+</head>
+<body>
+<div class='outer'>
+<div class='inner'>
+<div class='header'>
+<div class='logo'>
+<h1><a style='color: black;' href='..'>dvolk.github.io</a></h1>
+</div>
+<div class='navigation'><p><span style='font-size: 1.2em; visibility: hidden'>.</span>
+<a style='background-color: #CAFF70' class='top-link' href='./about_me.html'>About</a> 
+<a id='rss' href='../feed.rss'>RSS</a></p>
+</div>
+</div>
+<div class="entry">
+<h2 style='display: inline'><a href='./bloggen-now-with-toc.html'>Bloggen.py now with table of contents</a></h2>
+<br/><p style='font-size: 0.8em; display: inline'> <b>2015-09-24</b> by <b>dvolk</b></p>
+<div class="summary">
+<p>Yes indeed.</p>
+</div><div class='toc'><h3>Table of Contents</h3>
+<ul>
+<li><a href='#sec-0'>Python's great!</a></li>
+<li><a href='#sec-1'>Code</a></li>
+<li><a href='#sec-2'>Using</a></li>
+<li><a href='#sec-3'>Cmd arguments</a></li>
+<li><a href='#sec-4'>Padding...</a></li>
+</ul>
+</div>
+<div class="rest">
+<h3 id="sec-0">Python's great!</h3>
+<p>It was so easy! I continue to be taken by surprise by Python's libraries.
+    Coming from Haskell and C++, they're very easy to use and just packed
+    with features.</p>
+<p>I used to scoff at dynamic languages, but now I'm less sure.</p>
+<h3 id="sec-1">Code</h3>
+<pre>
+<span style="color: #00bfff;">def</span> <span style="color: #daa520;">generate_toc</span>(soup):
+    <span style="color: #4eee94;">h3s</span> = []
+    <span style="color: #00bfff;">for</span> i, h3 <span style="color: #00bfff;">in</span> <span style="color: #f08080;">enumerate</span>(soup.find_all(<span style="color: #deb887;">'h3'</span>)):
+        <span style="color: #4eee94;">h3</span>[<span style="color: #deb887;">'id'</span>] = <span style="color: #deb887;">'sec-{0}'</span>.<span style="color: #f08080;">format</span>(i)
+        h3s.append(h3.get_text())
+    <span style="color: #00bfff;">if</span> h3s == []: <span style="color: #00bfff;">return</span> <span style="color: #deb887;">""</span>
+
+    <span style="color: #4eee94;">out</span> = <span style="color: #deb887;">"&lt;div class='toc'&gt;&lt;h3&gt;Table of Contents&lt;/h3&gt;&lt;ul&gt;\n"</span>
+    <span style="color: #00bfff;">for</span> i, h3 <span style="color: #00bfff;">in</span> <span style="color: #f08080;">enumerate</span>(h3s):
+        <span style="color: #4eee94;">out</span> += <span style="color: #deb887;">"&lt;li&gt;&lt;a href='#sec-{0}'&gt;{1}&lt;/a&gt;&lt;/li&gt;\n"</span>.<span style="color: #f08080;">format</span>(i, h3)
+    <span style="color: #4eee94;">out</span> += <span style="color: #deb887;">"&lt;/ul&gt;&lt;/div&gt;\n"</span>
+    <span style="color: #00bfff;">return</span> out
+</pre>
+<h3 id="sec-2">Using</h3>
+<p>The table of contents is generated in posts that have a span called want_toc:</p>
+<pre>
+&lt;<span style="color: #daa520;">span</span> <span style="color: #4eee94;">class</span>=<span style="color: #deb887;">"want_toc"</span>&gt;true&lt;/<span style="color: #daa520;">span</span>&gt;</pre>
+<h3 id="sec-3">Cmd arguments</h3>
+<p>I also added some command-line arguments</p>
+<pre>
+$ python bloggen.py -h
+usage: bloggen.py [-h] [-g GENERATE] [-n] [-s] [-q]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g GENERATE, --generate GENERATE
+  -n, --no-index        don't generate index
+  -s, --skip-files      skip files beginning with . # or -
+  -q, --quiet</pre>
+<p>So it's now possible to regenerate post files individually, perhaps combined with a tool like make.</p>
+<p>I may add this functionality to bloggen.py itself.</p>
+<h3 id="sec-4">Padding...</h3>
+<p>I'm just adding some text here to show that the TOC links work correctly.</p>
+<p>This post is the 11th on this blog, and the index is set to display 10 posts per page, so there are now two index pages.</p>
+<p>I'm not sure about the shape/color of the prev/next buttons on the index.</p>
+<p>Oh you're still here? You're still reading this? Why?</p>
+<p>Let me tell you how I create these nice syntax colored pre's:</p>
+<p>I just select the code in emacs and run htmlize-region then copy/paste it into the post.</p>
+<p>There's probably a way to automate that in combination with emacs --daemon.</p>
+<p>With the RSS, TOC and arguments, bloggen.py is now almost 250 lines of code. It's becoming bloated!</p>
+<p><b>fin</b></p>
+</div></div>
+</div>
+</div>
+</body>
+</html>

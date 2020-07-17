@@ -1,0 +1,166 @@
+body {
+    font-size: 13px;
+    background-color: #ccc;
+    color: #444;
+    font-family: "DejaVu Sans";
+}
+
+
+div.outer {
+    background-color: white;
+    margin: 0 auto;
+    width: 600px;
+    border: 1px solid #aaa;
+    #padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 2em;
+}
+
+@media screen and (max-width: 600px) {
+   div.outer {
+      width: 99%;
+   }
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1em;
+    margin: 0
+}
+
+li {
+    margin-left: 0em;
+}
+
+span.date_text {
+    font-size: 0.8em; color: #777;
+}
+
+h1 {
+    margin-bottom: 0px;
+    padding-bottom: 4px;
+    margin-top: 2px;
+    color: #000000;
+}
+
+h2 { }
+
+h3 {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+h4 {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+pre {
+    #font-family: "DejaVu Sans Mono";
+    font-size: 0.85em;
+    color: #cccccc;
+    background-color: #181a26;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 0px;
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+div.toc {
+    margin: 1em;
+}
+
+div.inner {
+}
+
+div.entry {
+}
+
+img {
+    border: 1px solid #aaa;
+}
+
+div.logo {
+    padding-top: 1px;
+}
+
+div.header {
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 5px;
+    #padding-top: 4px;
+    margin-bottom: 6px;
+}
+
+div.logo a {
+    color: black;
+    float: left;
+    text-decoration: none;
+}
+
+a#rss {
+    border: 0px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: black;
+    padding: 4px 4px 2px 4px;
+    background-color: #FFA500;
+}
+
+a.top-link {
+    border: 0px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: black;
+    padding: 4px 4px 2px 4px;
+}
+
+a.page_nav {
+    font-size: 1.4em;
+    color: white;
+    padding: 2px;
+    background-color: #FF4040;
+}
+
+p.page_nav {
+    word-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
+
+div.navigation {
+    text-align: right;
+}
+
+div.bottom {
+    margin-top: 5px;
+    padding-top: 5px;
+#    margin-bottom: 1%;
+    border-top: 1px solid #aaa;
+}
+
+h2 {
+    color: #000000;
+}
+
+a {
+    color: steelblue;
+    text-decoration: none;
+}
+
+a#black {
+    color: black;
+}
+
+p {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"><channel><title>dvolk.github.io</title><link>https://dvolk.github.io</link><description>Blog of Denis Volk</description><lastBuildDate>Fri, 17 Jul 2020 17:19:20 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A More Open Space Program</title><link>https://dvolk.github.io/a_more_open_space_program.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;I spent some more time working on Open Space Program.&lt;/p&gt;
+&lt;p&gt;There's now a sun, a colorful planet and a moon with their own rotational and inertial reference frames and spheres of influence, a GUI, fuel consumption, etc.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://i.imgur.com/HM02Gd7.png"&gt;&lt;img src="https://i.imgur.com/1coPP7x.png"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/a_more_open_space_program.html</guid><pubDate>Sun, 18 Sep 2016 11:13:00 GMT</pubDate></item><item><title>2.7 Kelvin Events: An Illustrated Primer</title><link>https://dvolk.github.io/27kelvin_event_propagation.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;Information about observable events in &lt;a href="https://dvolk.github.io/posts/27kelvin.html"&gt;2.7 Kelvin&lt;/a&gt; propagate at the speed of light. What does this mean in practice?&lt;/p&gt;
+&lt;p&gt;It may be best to look at an example:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://i.imgur.com/jcQ5o8v.png"&gt;&lt;img src="https://i.imgur.com/x0yOWB2.png"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Fleet departures and arrivals are observable events.&lt;/p&gt;
+&lt;p&gt;In the above, the player is at Epsilon Eridani and has just sent a fleet from Epsilon Eridani to Tau Ceti at 0.75c. Since they're at the same system, they saw the departure event (the outer circle) immediately. On the other hand the arrival event (the inner circle) hasn't reached them yet, so they don't know if the fleet has arrived successfully (but we can see it has).&lt;/p&gt;
+&lt;p&gt;The other observer sits far away at Ross 154. Neither of the events has reached them yet - from their perspective, the fleet hasn't left yet.&lt;/p&gt;
+&lt;p&gt;In the game, each observer keeps their own copy of fleets and stars (and everything else that I might add). When an event reaches them they update their knowledge of the event's source.&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/27kelvin_event_propagation.html</guid><pubDate>Sun, 08 May 2016 11:12:00 GMT</pubDate></item><item><title>New experiment: 2.7 Kelvin</title><link>https://dvolk.github.io/new_game_27kelvin.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;I've been working on a new project: a RTwP space strategy game called &lt;a href="https://dvolk.github.io/posts/27kelvin.html"&gt;2.7 Kelvin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In &lt;a href="https://dvolk.github.io/posts/27kelvin.html"&gt;2.7 Kelvin&lt;/a&gt;, information travels at the speed of light.
+News from other star systems takes years to arrive,
+and so do your orders to other systems.
+There's no stealth in space, but when you look at a star 20 light
+years away you're seeing the situation as it was 20 years ago.
+The further the seat of your government is from
+the action the more distorted your perspective is.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href="https://i.imgur.com/ovuunem.png"&gt;&lt;img src="https://i.imgur.com/ovuunems.png"/&gt;&lt;/a&gt;
+&lt;a href="https://i.imgur.com/tAqm1uB.png"&gt;&lt;img src="https://i.imgur.com/tAqm1uBs.png"/&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/new_game_27kelvin.html</guid><pubDate>Tue, 03 May 2016 19:12:00 GMT</pubDate></item><item><title>Fallout 4 Review</title><link>https://dvolk.github.io/fallout_4_review.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;
+The Fallout series was started at the end of the previous millennium, in that magical
+time when isometric role-playing games flourished. The gameplay of Fallout consisted
+of very basic turn-based combat and a likewise basic choose-your-own-adventure-style
+plot that unfolded mostly through dialogues where the player navigated scripted
+situations. Fallout's main draw was its post-apocalyptic aesthetic based on what the
+developers thought 1960s Americans imagined the future might be like. The game
+presented a harsh future full of hard-boiled characters and desperate situations,
+and it became a classic.
+&lt;/p&gt;
+&lt;/div&gt;&lt;div class="rest"&gt;
+&lt;p&gt;
+But Fallout 4 isn't part of that series. As the original publisher went bankrupt,
+the intellectual monopoly was sold to Bethesda Softworks. Bethesda was in the
+business of making first-person open-world games, and so Fallout 3 came out in
+2008 as a first-person open-world game. It was liked and sold well, and it
+became one of their main series.
+&lt;/p&gt;
+&lt;p&gt;
+Fallout 3 was followed by Fallout: New Vegas, but this time it was developed
+by Obsidian Entertainment, a company with a connection to the original Fallout
+developers. New Vegas was liked, and it's generally thought of as having a better
+story and a more logical world map. The developers also made an effort to re-add
+the CYOA elements to dialogues similar to the original.
+&lt;/p&gt;
+&lt;p&gt;
+We now come to Fallout 4, released toward the end of 2015. Some things never
+change and it is, once again, an open-world first-person game. Unsurprisingly
+it's the best looking one so far from Bethesda, with a vivid, cluttered world
+and often strikingly pretty lighting. Taking place in a compressed version of
+Boston and its surroundings, Fallout 4 features large and complex urban areas,
+most of which are part of the main map, which allows for more freedom of movement
+than previous games and a more "3D" feel to the environments (other than
+Morrowind).
+&lt;/p&gt;
+&lt;p&gt;The game itself begins in the past, with players experiencing a short slice
+of idilic, sheltered life before the nuclear war. The player and their spouse
+are then frozen in a vault, awakened only to witness their child stolen and
+their spouse murdered, and then released from the vault after an unspecified time
+of being frozen again. The vault serves as a short tutorial environment, and
+the player is then a pointed in the general direction of the main quest, but is
+free to ignore it.
+&lt;/p&gt;
+&lt;p&gt;
+Fallout 4 learns from New Vegas and features factions and asks the player to
+pick sides in their conflicts. The factions sometimes feel contrived, but the
+arguments and advantages offered are interesting and, assuming the world drew
+you in, the ultimate choice is a difficult one.
+&lt;/p&gt;
+&lt;p&gt;
+Much has been said, often in tones comical to a disinterested observer, about
+the changes to the dialogue and skill systems. Fallout 4 does not have skills
+any more - instead those have been merged with the perks system. In practice
+it works well however, and it fixes important issues that Fallout has had
+since the beginning. The dialogue system is a stranger beast. It almost always
+has four options (with a fifth implicit one because you can now simply walk
+away at any time). Again, in practice it works well, and it feels more
+natural than previous games, but it must be said that at times the sacred
+number 4 seems too little, or too much.
+&lt;/p&gt;
+&lt;p&gt;
+What Fallout 4 takes away, it compensates by adding other things. One
+addition is that of settlement building that the player can build at designated
+areas across the map. These settlements attract NPCs who must be provided
+with life's necessities and protected against attacks. In return, they
+work and pass the fruit of their labors to you. At settlement workshops
+the player can also extensively modify weapons and armors, the latter of
+which now come in many pieces instead of whole suits. After release, Bethesda also
+added a new game mode that introduced hunger, hydration, sleep deprivation,
+diseases, and disabled map travel and restricted saving to beds.
+These changes mark another shift away from tight scripting and into
+procedural and sandbox gameplay, and this is not a bad thing.
+&lt;/p&gt;
+&lt;p&gt;
+Fallout 4 makes many changes to the gameplay that improve quality of life.
+The addition of sprinting means enemies can be made to be faster and more difficult
+to get away from, a reworked critical hits system removes pointless randomness,
+the addition of durability and fuel to power armor means you won't want to wear
+it all of the time and randomly spawning legendary enemies add variety to combat
+encounters to name a few changes. Since Fallout 4 is a long game, these
+improvements are very welcome. Overall it is more difficult and dynamic at all
+character levels than previous Fallouts.
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/fallout_4_review.html</guid><pubDate>Thu, 14 Apr 2016 16:03:00 GMT</pubDate></item><item><title>Open Space Program attempt #1</title><link>https://dvolk.github.io/open_space_program_attempt_1.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;Ever since I first played Orbiter years ago I had a vague wish to make
+my own space sim - and even more so - an open source platform that others could
+build on instead of being limited to making mods for proprietary engines.&lt;/p&gt;
+&lt;p&gt;Well, in March I made a few exploratory steps!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://i.imgur.com/qG3uTMg.png"&gt;&lt;img src="https://i.imgur.com/qG3uTMgs.png"/&gt;&lt;/a&gt;
+&lt;a href="https://i.imgur.com/CnAvQWE.png"&gt;&lt;img src="https://i.imgur.com/CnAvQWEs.png"/&gt;&lt;/a&gt;
+&lt;a href="https://i.imgur.com/ZjgJkh3.png"&gt;&lt;img src="https://i.imgur.com/ZjgJkh3s.png"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I used the Bullet physics library and OpenGL.&lt;/p&gt;
+&lt;p&gt;It was pretty fun, but I have to admit defeat for now.
+My development environment, which currently involves writing
+and running programs over a network (think vpn) just isn't
+suited for making 3D games.&lt;/p&gt;
+&lt;p&gt;I will have to come back in better conditions.&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/open_space_program_attempt_1.html</guid><pubDate>Mon, 11 Apr 2016 12:20:00 GMT</pubDate></item><item><title>Avarice Inc. status</title><link>https://dvolk.github.io/avarice_inc_status.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;I finished working on &lt;a href="https://dvolk.github.io/posts/avarice_inc.html"&gt;Avarice Inc.&lt;/a&gt;
+ over a month ago, but I never got to writing about it.&lt;/p&gt;
+&lt;p&gt;It's mostly finished. I added more stuff than I initially intended to,
+including a map editor, and I did it faster than I thought I would -
+in under two weeks.&lt;/p&gt;
+&lt;p&gt;What's missing? I added an option menu button, but it doesn't do anything.
+(the game can be configured through a config file).
+  &lt;/p&gt;&lt;p&gt;The AI isn't as good as I would like.&lt;/p&gt;
+&lt;p&gt;Despite having simple mechanics, that the map can change quickly
+and drastically made it difficult to write AI that plays well in the long term.&lt;/p&gt;
+&lt;p&gt;It's possible to design a map where you can press End Turn repeatedly
+and win because the AI destoyed its land and failed to get away in time.&lt;/p&gt;
+&lt;p&gt;Nevertheless I'm reasonably pleased with how it turned out.&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/avarice_inc_status.html</guid><pubDate>Mon, 11 Apr 2016 12:13:00 GMT</pubDate></item><item><title>Avarice Inc.</title><link>https://dvolk.github.io/new_game_avarice_inc.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;For the past couple of days I've been working on a new game:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://dvolk.github.io/posts/avarice_inc.html"&gt;Avarice Inc.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://i.imgur.com/Ly7L2RZ.png"&gt;
+&lt;img alt="screenshot of Avarice inc. map" src="https://i.imgur.com/phsh3H5.png"/&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/new_game_avarice_inc.html</guid><pubDate>Thu, 25 Feb 2016 16:00:00 GMT</pubDate></item><item><title>Project X 1.0 and lessons learned</title><link>https://dvolk.github.io/project_x_1_0.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;I've released version 1.0 of &lt;a href="https://dvolk.github.io/posts/project_x.html"&gt;Project X.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have no plans to work on it now, and it's
+    time to wrap things up and see what can be learned
+    from the experience.&lt;/p&gt;
+&lt;/div&gt;&lt;div class="rest"&gt;
+&lt;h3&gt;Status&lt;/h3&gt;
+&lt;p&gt;Overall I'm pretty happy with how it ended up. It doesn't
+    have the content of a full game, but from a programming
+    standpoint, which was my primary interest, it's got most
+    of the things a game needs.&lt;/p&gt;
+&lt;h3&gt;History&lt;/h3&gt;
+&lt;p&gt;I started working on it in February almost immediately
+    after getting the idea about making an open source Neo-scavenger.
+    I had not played Neo-scavenger before but I'd watched a couple
+    of videos of people playing it, and it seemed interesting.&lt;/p&gt;
+&lt;p&gt;Initially I hoped that I would find collaborators to share
+    the programming work with, but I ended up doing it all myself,
+    which was fine too. I did get some good feedback on memory
+    management in the first few days though.&lt;/p&gt;
+&lt;h3&gt;Lessons learned&lt;/h3&gt;
+&lt;h4&gt;Making a game from the beginning is a lot more work than contributing to an existing one&lt;/h4&gt;
+&lt;p&gt;There's a terrible sense of freedom involved in having to
+    architect it all yourself. Endless ways of doing it, endless
+    ways of messing things up and having headaches later fixing
+    it.&lt;/p&gt;
+&lt;h4&gt;Graphics are difficult to make&lt;/h4&gt;
+&lt;p&gt;Although the game's pretty simple, it does require a lot
+    of sprites. Tiles, characters, items, buttons, etc. These were
+    almost painfully tedious for me to try to make.&lt;/p&gt;
+&lt;p&gt;Asking others to work for free isn't great either.&lt;/p&gt;
+&lt;p&gt;This was the biggest block to development, as I often lacked
+    the graphics for the features I wanted to add.&lt;/p&gt;
+&lt;p&gt;If I make another game I will either base it around existing
+    free graphics, or I will use only abstract geometric shapes.&lt;/p&gt;
+&lt;h4&gt;Writing isn't quite trivial&lt;/h4&gt;
+&lt;p&gt;This is/was a personal bias of mine I suppose. I thought writing
+    content like quests and background would be, well, "automatic".&lt;/p&gt;
+&lt;p&gt;Nope. In the end I made one quest, and the game still doesn't
+    have a background story.&lt;/p&gt;
+&lt;h4&gt;It's difficult to get feedback&lt;/h4&gt;
+&lt;p&gt;I got some feedback, but not as much as I would have hoped for
+    ideally.&lt;/p&gt;
+&lt;p&gt;People who play video games want complete games, and people
+    who develop video games have their own that they're working on.&lt;/p&gt;
+&lt;p&gt;Understandably, nobody wants to help test half/quarter done
+    games.&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/project_x_1_0.html</guid><pubDate>Sun, 11 Oct 2015 19:00:00 GMT</pubDate></item><item><title>Auto-generated pages for bloggen.py and more</title><link>https://dvolk.github.io/bloggen_improvements_autogenerated_pages.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;&lt;a href="https://github.com/dvolk/bloggen"&gt;Bloggen.py&lt;/a&gt; now has options to auto-generate pages.&lt;/p&gt;
+&lt;p&gt;This is useful for example for making an index containing links to all pages on the blog, or indexes of pages with specific titles.&lt;/p&gt;
+&lt;/div&gt;&lt;div class="rest"&gt;
+&lt;h3&gt;Auto-generated pages&lt;/h3&gt;
+&lt;p&gt;Functions are simply added to the special_pages list:&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style="color: #7f7f7f;"&gt;# &lt;/span&gt;&lt;span style="color: #7f7f7f;"&gt;to generate posts from functions rather than files,
+&lt;/span&gt;&lt;span style="color: #7f7f7f;"&gt;# &lt;/span&gt;&lt;span style="color: #7f7f7f;"&gt;add them to special_pages. The elements of special pages are either
+&lt;/span&gt;&lt;span style="color: #7f7f7f;"&gt;# &lt;/span&gt;&lt;span style="color: #7f7f7f;"&gt;function returning a post, or a tuple of a function returning a Post
+&lt;/span&gt;&lt;span style="color: #7f7f7f;"&gt;# &lt;/span&gt;&lt;span style="color: #7f7f7f;"&gt;and a tuple of arguments to that function
+&lt;/span&gt;&lt;span style="color: #4eee94;"&gt;special_pages&lt;/span&gt; = [all_posts_by_date,
+                 (all_posts_about, (&lt;span style="color: #deb887;"&gt;'Project X'&lt;/span&gt;, &lt;span style="color: #deb887;"&gt;'project_x'&lt;/span&gt;)),
+                 (all_posts_about, (&lt;span style="color: #deb887;"&gt;'bloggen.py'&lt;/span&gt;, &lt;span style="color: #deb887;"&gt;'bloggen_py'&lt;/span&gt;))]
+&lt;/pre&gt;
+&lt;p&gt;The functions must return a Post object, e.g.:&lt;/p&gt;
+&lt;pre&gt;
+&lt;span style="color: #00bfff;"&gt;def&lt;/span&gt; &lt;span style="color: #daa520;"&gt;all_posts_by_date&lt;/span&gt;():
+    &lt;span style="color: #00bfff;"&gt;global&lt;/span&gt; posts
+    &lt;span style="color: #4eee94;"&gt;rest&lt;/span&gt; = &lt;span style="color: #deb887;"&gt;""&lt;/span&gt;
+    &lt;span style="color: #00bfff;"&gt;for&lt;/span&gt; post &lt;span style="color: #00bfff;"&gt;in&lt;/span&gt; posts:
+        &lt;span style="color: #4eee94;"&gt;rest&lt;/span&gt; += &lt;span style="color: #deb887;"&gt;"&amp;lt;p&amp;gt;&amp;lt;a href='{0}.html'&amp;gt;{1}&amp;lt;/a&amp;gt;"&lt;/span&gt;.&lt;span style="color: #f08080;"&gt;format&lt;/span&gt;(post.link, post.title)
+        &lt;span style="color: #00bfff;"&gt;if&lt;/span&gt; post.time:
+            &lt;span style="color: #4eee94;"&gt;time_str&lt;/span&gt; = datetime.datetime.strftime(post.time, post_time_output_fmt)
+            &lt;span style="color: #4eee94;"&gt;rest&lt;/span&gt; += &lt;span style="color: #deb887;"&gt;" &amp;lt;span class='date_text'&amp;gt;{0}&amp;lt;/span&amp;gt;"&lt;/span&gt;.&lt;span style="color: #f08080;"&gt;format&lt;/span&gt;(time_str)
+        &lt;span style="color: #4eee94;"&gt;rest&lt;/span&gt; += &lt;span style="color: #deb887;"&gt;"&amp;lt;/p&amp;gt;\n"&lt;/span&gt;
+    &lt;span style="color: #00bfff;"&gt;return&lt;/span&gt; Post(&lt;span style="color: #deb887;"&gt;"all_posts_by_date"&lt;/span&gt;, &lt;span style="color: #a2cd5a;"&gt;None&lt;/span&gt;, &lt;span style="color: #a2cd5a;"&gt;None&lt;/span&gt;, &lt;span style="color: #a2cd5a;"&gt;None&lt;/span&gt;,
+                &lt;span style="color: #deb887;"&gt;"All posts by date"&lt;/span&gt;, rest, &lt;span style="color: #a2cd5a;"&gt;False&lt;/span&gt;)
+&lt;/pre&gt;
+&lt;h3&gt;List of all auto-generated pages&lt;/h3&gt;
+&lt;p&gt;It also creates &lt;a href="https://dvolk.github.io/posts/autogenned_page_index.html"&gt;a list of all auto-generated pages&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Link replacement&lt;/h3&gt;
+&lt;p&gt;Links from posts to other posts can now use __SITEPOST__ as a keyword that gets replaced with site_url/posts. Similarly __SITEROOT__ refers to site_url. This makes it possible to easily link between posts without encoding the full URL in the post.&lt;/p&gt;
+&lt;p&gt;The site_url can also be overried by a new command-line option --root&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/bloggen_improvements_autogenerated_pages.html</guid><pubDate>Sun, 27 Sep 2015 17:17:00 GMT</pubDate></item><item><title>Project X: Character sprite shows equipment</title><link>https://dvolk.github.io/project_x_now_map_chars.html</link><description>&lt;div class="summary"&gt;
+&lt;p&gt;The player's sprite on the map now shows the clothing and equipment they have in their hands (at the moment only the right hand).&lt;/p&gt;
+&lt;img alt="four frames of map characters showing different equipment" src="https://i.imgur.com/oFp7fS0.png"/&gt;
+&lt;p&gt;I'm not sure if this should also work for non-player characters. They're different sprites, so this couldn't just be added to them. It also probably doesn't make sense for the player to see exactly what others on different tiles are wearing and holding.&lt;/p&gt;
+&lt;/div&gt;</description><guid isPermaLink="true">https://dvolk.github.io/project_x_now_map_chars.html</guid><pubDate>Fri, 25 Sep 2015 16:00:00 GMT</pubDate></item></channel></rss>
